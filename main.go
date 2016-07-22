@@ -13,11 +13,11 @@ func main() {
 	flag.Parse()
 
 	if *o {
-		fmt.Println("hellow world")
+		fmt.Println("Hello, World")
 	}
 
 	if *p {
-		panic("Panic!")
+		panic("Hello, World from panic")
 	}
 
 	if *h {
