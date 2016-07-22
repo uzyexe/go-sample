@@ -25,4 +25,4 @@ Options
 | ------ | --- |
 | o | output `Hello, World` |
 | p | make panic |
-| h | run http server on localhost:8080 |
+| s | run http server on localhost:8080 |

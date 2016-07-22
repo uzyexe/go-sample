@@ -9,7 +9,7 @@ import (
 func main() {
 	o := flag.Bool("o", false, "output hello world")
 	p := flag.Bool("p", false, "make panic")
-	h := flag.Bool("h", false, "run http server localhost:8080")
+	s := flag.Bool("s", false, "run http server localhost:8080")
 	flag.Parse()
 
 	if *o {
@@ -20,7 +20,7 @@ func main() {
 		panic("Hello, World from panic")
 	}
 
-	if *h {
+	if *s {
 		httpServ()
 	}
 }
