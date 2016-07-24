@@ -26,3 +26,11 @@ Options
 | o | output `Hello, World` |
 | p | make panic |
 | s | run http server on localhost:8080 |
+
+Run on Docker
+--------------
+
+```bash
+$ docker build -t go-sample .
+$ docker run -it --rm --name run-go-sample -p 80:8080 go-sample
+```
