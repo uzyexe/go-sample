@@ -3,7 +3,9 @@ package main
 import (
 	"flag"
 	"fmt"
+	"log"
 	"net/http"
+	"os"
 )
 
 func main() {
@@ -29,5 +31,20 @@ func httpServ() {
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		fmt.Fprintf(w, "Hello, World")
 	})
-	http.ListenAndServe(":8080", nil)
+
+	port := port()
+
+	if err := http.ListenAndServe(fmt.Sprintf(":%s", port), nil); err != nil {
+		panic(err)
+	}
+}
+
+func port() string {
+	port := os.Getenv("GO_SAMPLE_HTTP_PORT")
+	if port == "" {
+		port = "8080"
+	}
+
+	log.Printf("port: %s", port)
+	return port
 }
